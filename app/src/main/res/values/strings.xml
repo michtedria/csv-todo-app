@@ -8,7 +8,7 @@
     <string name="task1">Eat Breakfast by 10am</string>
     <string name="task2">Eat Lunch by 12nn</string>
     <string name="task_to_do">To Do</string>
-    <string name="enter_details">Please enter description here</string>
+    <string name="enter_details">Enter your task here.</string>
     <string name="btAdd">+</string>
     <string name="EXTRA_MESSAGE">MESSAGE</string>
 </resources>

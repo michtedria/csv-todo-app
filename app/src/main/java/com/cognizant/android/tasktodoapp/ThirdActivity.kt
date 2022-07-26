@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.cognizant.android.tasktodoapp.SecondActivity.Companion.EXTRA_MESSAGE
 import com.cognizant.android.tasktodoapp.databinding.ActivitySecondBinding
 import com.cognizant.android.tasktodoapp.databinding.ActivityThirdBinding
+import com.cognizant.android.tasktodoapp.model.Tasks
 
 class ThirdActivity : AppCompatActivity() {
 
@@ -15,6 +16,17 @@ class ThirdActivity : AppCompatActivity() {
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.tvTitle2.text = intent.getStringExtra(EXTRA_MESSAGE)
+        val task = intent.getParcelableExtra<Tasks>(EXTRA_MESSAGE)
+        task?.let {
+            with(binding) {
+                val newTitle = it.title
+                val newDetails = it.details
+                tvTitle2.text = newTitle
+                tvDetails.text = newDetails
+            }
+        }
+    }
+    companion object {
+        const val EXTRA_MESSAGE = "MESSAGE"
     }
 }

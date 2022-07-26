@@ -1,7 +1,11 @@
 package com.cognizant.android.tasktodoapp.model
 
-import androidx.annotation.StringRes
+import android.os.Parcelable
+import android.telecom.Call
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Tasks (
-    @StringRes val stringResourceId: Int,
-)
+    val title: String,
+    val details: String,
+): Parcelable
